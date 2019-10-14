@@ -8,17 +8,17 @@ services:
           - "8080:8080/tcp"
       volumes:
           - type: bind
-            source: $HOME/shinobi/shinobiStreams
+            source: ./data/shinobiStreams
             target: /dev/shm/streams
           - type: bind
-            source: $HOME/shinobi/shinobiConfig
+            source: ./data/shinobiConfig
             target: /config
           - type: bind
-            source: $HOME/shinobi/shinobiCustomAutoLoad
+            source: ./data/shinobiCustomAutoLoad
             target: /customAutoLoad
           - type: bind
-            source: $HOME/shinobi/shinobiDatabase
+            source: ./data/shinobiDatabase
             target: /var/lib/mysql
           - type: bind
-            source: $HOME/shinobi/shinobiVideos
+            source: ./data/shinobiVideos
             target: /opt/shinobi/videos
