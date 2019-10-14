@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  shinobi:
+      image: shinobicctv/shinobi:latest
+      environment:
+          APP_BRANCH: dev
+      ports:
+          - "8080:8080/tcp"
+      volumes:
+          - type: bind
+            source: $HOME/shinobi/shinobiStreams
+            target: /dev/shm/streams
+          - type: bind
+            source: $HOME/shinobi/shinobiConfig
+            target: /config
+          - type: bind
+            source: $HOME/shinobi/shinobiCustomAutoLoad
+            target: /customAutoLoad
+          - type: bind
+            source: $HOME/shinobi/shinobiDatabase
+            target: /var/lib/mysql
+          - type: bind
+            source: $HOME/shinobi/shinobiVideos
+            target: /opt/shinobi/videos
